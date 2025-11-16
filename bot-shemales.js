@@ -41,7 +41,8 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
 
 // Obtener audio correcto
 function findAudio(userId) {
-  const base = path.join(__dirname, "audios");
+  const base = "/media/audios"
+  console.log("📂 Archivos disponibles:", fs.readdirSync(base));
 
   const userFile = path.join(base, `${userId}.mp3`);
   const defaultFile = path.join(base, "default.mp3");
